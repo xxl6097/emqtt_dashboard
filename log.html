@@ -1,0 +1,50 @@
+<style type="text/css">
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .scrollTbody {
+        display: block;
+        height: 700px;
+        overflow: auto;
+        width: 100%;
+    }
+
+    .table td {
+        word-break: break-all;
+    }
+
+    /*.table tr {
+        border-right: 1px solid #CCC;
+        border-top: 1px solid #DDD;
+        border-left: 1px solid #EB8;
+        border-bottom: 1px solid #B74;
+    }*/
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        <input type="button" value="开启日志" @click="openLog()"/>
+                        <input type="button" value="保存日志" @click="saveLog()"/>
+                        <input type="button" value="关闭日志" @click="closeLog()"/>
+                        <input type="button" value="清除日志" @click="clearLog()"/>
+                        <p id="headId"/>
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="container" class="scrollTbody">
+                <tr v-for="(index, message) in receiveMsgs ">
+                    <td>{{message}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
